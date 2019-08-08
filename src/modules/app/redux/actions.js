@@ -5,4 +5,11 @@ export const setSelectedMenuItemId = menuItemId => ({
   payload: menuItemId,
 });
 
-export const fake = '';
+export const toggleSidebarFolded = () => ({
+  type: actionTypes.TOGGLE_SIDEBAR_FOLDED,
+});
+
+export const setSidebarVisibility = visibilityFlag => ({
+  type: actionTypes.SET_SIDEBAR_VISIBILITY,
+  payload: visibilityFlag,
+});

@@ -15,3 +15,16 @@ export const recursiveFindMenuItemIdByPath = (menuItems, currentPath) => {
   });
   return returnValue;
 };
+
+let timerId;
+export const debounce = (fn, delay) => { // eslint-disable-line
+  return ((...args) => {
+    if (timerId) {
+      clearTimeout(timerId);
+    }
+    timerId = setTimeout(() => {
+      fn(...args);
+      timerId = null;
+    }, delay);
+  })();
+};

@@ -1,29 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import AppHeader from '../../components/AppHeader';
-import AppFooter from '../../components/AppFooter';
+import AppHeader from '../../components/appHeader/AppHeaderContainer';
+import AppFooter from '../../components/appFooter/AppFooterContainer';
 import Sidebar from '../../components/sidebar/SidebarContainer';
+import { noop } from '../../../utils';
 
-const MainTemplate = ({ children }) => (
+const MainTemplate = ({ children, isSidebarVisible, setSidebarVisibility }) => (
   <div className="main-template">
-    <AppHeader />
+    <Sidebar />
     <div className="template-body">
-      <Sidebar />
+      <AppHeader />
       <main>
         {children}
       </main>
+      <AppFooter />
     </div>
-    <AppFooter />
+    {
+      isSidebarVisible
+      && (
+        <div
+          className="modal-backdrop fade show"
+          role="presentation"
+          onClick={setSidebarVisibility}
+        />
+      )
+    }
   </div>
 );
 
 MainTemplate.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
+  isSidebarVisible: PropTypes.bool,
+  setSidebarVisibility: PropTypes.func,
 };
 
 MainTemplate.defaultProps = {
   children: <div />,
+  isSidebarVisible: false,
+  setSidebarVisibility: noop,
 };
 
 export default MainTemplate;

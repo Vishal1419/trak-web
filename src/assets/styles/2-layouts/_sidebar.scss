@@ -1,0 +1,124 @@
+$brand-height: 60px;
+
+.sidebar {
+  position: relative;
+  z-index: 1000;
+  opacity: 1;
+  background-color: $secondary-background-color;
+  @media screen and (max-width: 992px) {
+    position: fixed;
+    z-index: 1050;
+    display: none;
+    &.visible {
+      display: block;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    &.folded {
+      .brand-container {
+        .navbar-brand {
+          margin: 0 auto;
+          span {
+            display: none;
+          }
+        }
+      }
+      .nav-wrapper {
+        ul.nav li a {
+          .nav-icon {
+            margin: 0 auto;
+          }
+          .nav-text {
+            display: none;
+          }
+        }
+      }
+      .nav-fold {
+        span {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .brand-container {
+    padding: 0.75rem 1rem;
+    height: $brand-height;
+    display: flex;
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      color: $brand-color;
+      font-size: 1.125rem;
+      svg {
+        font-weight: 600;
+      }
+      span {
+        margin: 0 0.5rem;
+        font-weight: 600;
+        letter-spacing: -1px;
+      }
+    }
+  }
+  .nav-wrapper {
+    height: calc(100% - #{$brand-height});
+    ul.nav {
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - #{$brand-height});
+      li {
+        color: inherit;
+        &.active {
+          color: $active-color;
+          a {
+            .nav-icon {
+              opacity: 1;
+            }
+          }
+        }
+        a {
+          display: flex;
+          flex-wrap: nowrap;
+          padding: 0 0.5rem;
+          line-height: 2.5rem;
+          color: inherit;
+          &:hover, &:active {
+            .nav-icon {
+              opacity: 1;
+            }
+          }
+          .nav-icon {
+            font-size: 1rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            opacity: 0.65;
+            svg {
+              height: 16px;
+              width: 16px;
+            }
+          }
+          .nav-text {
+            margin: 0 0.5rem;
+            line-height: 1.125rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+    .nav-fold {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      svg {
+        height: 16px;
+        width: 16px;
+      }
+    }
+  }
+}

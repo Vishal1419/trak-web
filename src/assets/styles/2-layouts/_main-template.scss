@@ -1,0 +1,27 @@
+:root {
+  --sidebar-width: 13.5rem; 
+}
+
+.main-template {
+  display: flex;
+  height: 100%;
+  .sidebar {
+    width: var(--sidebar-width);
+    height: 100%;
+    @media screen and (max-width: 992px) {
+      --sidebar-width: 17.5rem;
+    }
+    @media screen and (min-width: 992px) {
+      &.folded {
+        --sidebar-width: 4.5rem;
+      }
+    }
+  }
+  .template-body {
+    width: calc(100% - var(--sidebar-width));
+    height: 100%;
+    @media screen and (max-width: 992px) {
+      width: 100%;
+    }
+  }
+}

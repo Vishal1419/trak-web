@@ -1,6 +1,0 @@
-[
-  {"id": 1, "title": "Discover", "icon": "disc", "url":"/" },
-  {"id": 2, "title": "Charts", "icon": "trending-up", "url":"/charts" },
-  {"id": 3, "title": "Audio", "icon": "radio", "url":"/audio" },
-  {"id": 4, "title": "Artists", "icon": "user", "url":"/artists" }
-]

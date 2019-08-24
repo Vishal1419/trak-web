@@ -1,16 +1,18 @@
-$brand-height: 60px;
-
 .sidebar {
   position: relative;
   z-index: 1000;
   opacity: 1;
   background-color: $secondary-background-color;
+  transition: 0.2s width ease;
   @media screen and (max-width: 992px) {
     position: fixed;
     z-index: 1050;
-    display: none;
+    transform: translateX(-100%);
+    top: 0;
+    bottom: 0;
+    transition: 0.2s transform ease-in;
     &.visible {
-      display: block;
+      transform: translateX(0%)
     }
   }
   @media screen and (min-width: 992px) {

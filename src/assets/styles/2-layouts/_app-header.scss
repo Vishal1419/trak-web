@@ -1,0 +1,21 @@
+.app-header {
+  .brand-container {
+    padding: 0.75rem 1rem;
+    height: $brand-height;
+    display: flex;
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      color: $brand-color;
+      font-size: 1.125rem;
+      svg {
+        font-weight: 600;
+      }
+      span {
+        margin: 0 0.5rem;
+        font-weight: 600;
+        letter-spacing: -1px;
+      }
+    }
+  }
+}

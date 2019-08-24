@@ -15,7 +15,7 @@ const AppLogoData = SvgData.find(data => data.key === 'logo');
 const AppHeader = ({ setSidebarVisibility }) => (
   <div className="app-header">
     <Navbar expand="lg">
-      <Navbar.Brand href="/">
+      <Navbar.Brand href="/" className="d-lg-none">
         <SVG
           fill="currentColor"
           className="loading-spin"

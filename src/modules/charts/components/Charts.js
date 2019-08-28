@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-import { sorts, regions, genres } from '../filters';
+import { sorts, regions, genres } from '../../../shared/filters';
 import SectionHeader from '../../../shared/components/SectionHeader';
-import TracksList from '../../../shared/components/Songs';
+import TracksList from '../../../shared/components/TracksList';
 import { noop } from '../../../utils';
+import NoData from '../../../shared/components/NoData';
 
 const Charts = ({
   tracks, loading,
@@ -65,7 +66,11 @@ const Charts = ({
         </DropdownButton>
       </div>
     </div>
-    <TracksList tracks={tracks} loading={loading} />
+    {
+      tracks.length > 0
+        ? <TracksList tracks={tracks} loading={loading} />
+        : <NoData />
+    }
   </div>
 );
 

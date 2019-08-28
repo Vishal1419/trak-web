@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import SectionHeader from '../../../../shared/components/SectionHeader';
-import TracksList from '../../../../shared/components/Songs';
+import TracksList from '../../../../shared/components/TracksList';
 
 const RecentlyAddedTracksSection = ({ recentlyAddedTracks, loading }) => (
   <div className="recently-added-tracks-section">

@@ -25,6 +25,7 @@
     }
     .app-header {
       position: fixed;
+      z-index: 1000;
       height: $brand-height;
       top: 0;
       left: var(--sidebar-width);
@@ -47,6 +48,7 @@
     }
     .app-footer {
       position: fixed;
+      z-index: 1000;
       bottom: 0;
       left: var(--sidebar-width);
       right: 0;

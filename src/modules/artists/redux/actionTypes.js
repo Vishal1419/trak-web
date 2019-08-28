@@ -1,2 +1,6 @@
-export const fake1 = '';
-export const fake = '';
+export const GET_ARTISTS = 'GET_ARTISTS';
+export const GET_ARTISTS_LOADING = 'GET_ARTISTS_LOADING';
+export const GET_ARTISTS_SUCCESS = 'GET_ARTISTS_SUCCESS';
+export const GET_ARTISTS_ERROR = 'GET_ARTISTS_ERROR';
+
+export const CHANGE_ACTIVE_FILTERS = 'CHANGE_ACTIVE_FILTERS';

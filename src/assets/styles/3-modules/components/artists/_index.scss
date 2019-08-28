@@ -1,0 +1,24 @@
+.artists {
+  .options {
+    .countries-container {
+      display: flex;
+      align-items: baseline;
+      .countries {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .filter {
+          &:hover {
+            background-color: $tag-hover-background-color;
+          }
+          &.active {
+            color: $active-color;
+          }
+          background-color: $tag-background-color;
+          padding: 0.75em 1em;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

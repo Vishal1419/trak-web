@@ -14,6 +14,26 @@ const TopTracksSection = ({ topTracks, loading }) => {
     slidesToScroll: 1,
     autoplay: false,
     draggable: false,
+    responsive: [
+      {
+        breakpoint: 920,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
   return (
     <div className="top-tracks-section">
@@ -32,10 +52,11 @@ const TopTracksSection = ({ topTracks, loading }) => {
             }
             return (
               <div className="track">
-                <div
-                  className="track-image-container"
-                  style={{ backgroundImage: `url("${track.image}")` }}
-                >
+                <div className="track-image-wrapper">
+                  <div
+                    className="track-image-container"
+                    style={{ backgroundImage: `url("${track.image}")` }}
+                  />
                   <div className="overlay">
                     <Button className="btn-raised btn-icon btn-play" />
                   </div>

@@ -11,7 +11,7 @@ const MainTemplate = ({ children, isSidebarVisible, setSidebarVisibility }) => (
     <Sidebar />
     <div className="template-body">
       <AppHeader />
-      <main>
+      <main className="page-container">
         {children}
       </main>
       <AppFooter />

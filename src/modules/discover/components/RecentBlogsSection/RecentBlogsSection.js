@@ -15,7 +15,7 @@ const RecentBlogsSection = ({ recentBlogs, loading }) => (
           recentBlogs.map((blog) => {
             if (loading && blog.id === 'placeholder') {
               return (
-                <Col md={4}>
+                <Col xs={4}>
                   <ContentLoader width="135" height="175">
                     <rect x="0" y="0" rx="5" ry="5" width="135" height="75" />
                     <rect x="0" y="91" rx="5" ry="5" width="135" height="10" />
@@ -26,7 +26,7 @@ const RecentBlogsSection = ({ recentBlogs, loading }) => (
               );
             }
             return (
-              <Col md={4}>
+              <Col xs={4}>
                 <div className="blog">
                   <div
                     className="blog-image-container"

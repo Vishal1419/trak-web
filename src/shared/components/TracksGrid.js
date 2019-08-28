@@ -12,7 +12,7 @@ const TracksGrid = ({ tracks, loading }) => (
         tracks.map((track) => {
           if (loading && track.id === 'placeholder') {
             return (
-              <Col sm={4} md={3} lg={2}>
+              <Col xs={4} sm={4} md={3} lg={2}>
                 <div className="track-content-loader">
                   <ContentLoader width="200" height="275">
                     <rect x="0" y="0" rx="5" ry="5" width="200" height="200" />
@@ -24,7 +24,7 @@ const TracksGrid = ({ tracks, loading }) => (
             );
           }
           return (
-            <Col sm={4} md={3} lg={2}>
+            <Col xs={4} sm={4} md={3} lg={2}>
               <div className="track">
                 <div className="track-image-wrapper">
                   <div

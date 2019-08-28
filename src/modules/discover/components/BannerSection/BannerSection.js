@@ -9,7 +9,7 @@ const BannerSection = ({ banners }) => (
     <Row noGutters className="banner-group">
       {
         banners.map(banner => (
-          <Col sm={6} key={banner.id}>
+          <Col sm={6} className="mb-3" key={banner.id}>
             <Link to="/" className="banner mb-3">
               <div
                 className="banner-description p-5"

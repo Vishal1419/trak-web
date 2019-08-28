@@ -1,6 +1,5 @@
 .discover {
   .banner-section {
-    margin-bottom: 15px;
     .banner-group {
       @media (min-width: 576px) {
         display: flex;
@@ -11,12 +10,18 @@
         .banner-description {
           border-top-left-radius: 0.25rem;
           border-bottom-left-radius: 0.25rem;
+          @media (max-width: 576px) {
+            border-radius: 0.25rem;
+          }
         }
       }
       [class*='col-']:last-of-type {
         .banner-description {
           border-top-right-radius: 0.25rem;
           border-bottom-right-radius: 0.25rem;
+          @media (max-width: 576px) {
+            border-radius: 0.25rem;
+          }
         }
       }
       .banner {

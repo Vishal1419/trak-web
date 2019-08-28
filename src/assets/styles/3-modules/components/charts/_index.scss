@@ -27,6 +27,12 @@
           top: 50%;
           transform: translateY(-50%);
         }
+        @media screen and (max-width: 768px) {
+          white-space: pre-wrap;
+        }
+        @media screen and (max-width: 576px) {
+          min-width: auto !important;
+        }
       }
     }
   }

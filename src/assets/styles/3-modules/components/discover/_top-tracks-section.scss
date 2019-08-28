@@ -28,36 +28,46 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 1rem;
-        .track-image-container {
-          height: 125px;
-          width: 125px;
-          background-position: 50%;
-          background-size: cover;
-          border-radius: 3px;
-          position: relative;
-          &:before {
-            content: "";
-            position: absolute;
-            height: 10%;
-            width: 90%;
-            left: 5%;
-            bottom: 0;
-            background: inherit;
-            background-position-y: 100%;
-            filter: blur(10px);
-          }
-          &:hover {
+        padding: 0 15px;
+        &:hover {
+          .track-image-wrapper {
             .overlay {
               display: block;
             }
           }
-          .overlay {
-            display: none;
-            height: 100%;
+        }
+        .track-image-wrapper {
+          position: relative;
+          width: 100%;
+          .track-image-container {
             width: 100%;
-            background-color: $overlay-background-color;
+            height: 0;
+            padding-bottom: 100%;
+            background-position: 50%;
+            background-size: cover;
             border-radius: 3px;
             position: relative;
+            &:before {
+              content: "";
+              position: absolute;
+              height: 10%;
+              width: 90%;
+              left: 5%;
+              bottom: 0;
+              background: inherit;
+              background-position-y: 100%;
+              filter: blur(10px);
+            }
+          }
+          .overlay {
+            display: none;
+            background-color: $overlay-background-color;
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
           }
         }
         span {

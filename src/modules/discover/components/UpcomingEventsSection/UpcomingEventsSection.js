@@ -15,7 +15,7 @@ const UpcomingEventsSection = ({ upcomingEvents, loading }) => (
           upcomingEvents.map((event) => {
             if (loading && event.id === 'placeholder') {
               return (
-                <Col md={6}>
+                <Col xs={6}>
                   <ContentLoader width="210" height="108">
                     <rect x="24" y="24" rx="5" ry="5" width="162" height="10" />
                     <rect x="24" y="54" rx="5" ry="5" width="162" height="10" />
@@ -24,7 +24,7 @@ const UpcomingEventsSection = ({ upcomingEvents, loading }) => (
               );
             }
             return (
-              <Col md={6}>
+              <Col xs={6}>
                 <div className={`event gd-${event.type}`}>
                   <h5>{event.name}</h5>
                   <span className="text-sm">{event.date}</span>

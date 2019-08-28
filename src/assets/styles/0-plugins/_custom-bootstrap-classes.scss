@@ -1,0 +1,13 @@
+@media (min-width: 1200px) {
+  .col-xl-1-8 {
+    flex: 0 0 12.5%;
+    max-width: 12.5%;
+  }
+}
+
+@media (min-width: 992px) {
+  .page-container {
+      max-width: 1140px;
+      margin: 0 auto;
+  }
+}

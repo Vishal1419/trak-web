@@ -1,0 +1,48 @@
+.discover {
+  .recent-blogs-section {
+    .recent-blogs {
+      > .row {
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        [class*='col-'] {
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+        }
+      }
+      .blog {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        .blog-image-container {
+          height: 75px;
+          width: 100%;
+          background-position: 50%;
+          background-size: cover;
+          border-radius: 3px;
+          position: relative;
+          &:before {
+            content: "";
+            position: absolute;
+            height: 10%;
+            width: 90%;
+            left: 5%;
+            bottom: 0;
+            background: inherit;
+            background-position-y: 100%;
+            filter: blur(10px);
+          }
+        }
+        .title {
+          font-weight: 500;
+          margin-top: 1rem;
+        }
+        .date {
+          color: $light-text-color-400;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

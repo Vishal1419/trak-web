@@ -1,0 +1,87 @@
+.tracks-list {
+  .track {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0.625rem;
+    &:hover {
+      .track-image-container {
+        .overlay {
+          display: block;
+        }
+      }
+    }
+    .index {
+      width: 3rem;
+      font-weight: 600;
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+    }
+    .track-image-container {
+      height: 64px;
+      width: 64px;
+      background-position: 50%;
+      background-size: cover;
+      border-radius: 3px;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        height: 10%;
+        width: 90%;
+        left: 5%;
+        bottom: 0;
+        background: inherit;
+        background-position-y: 100%;
+        filter: blur(10px);
+      }
+      .overlay {
+        display: none;
+        height: 100%;
+        width: 100%;
+        background-color: $overlay-background-color;
+        border-radius: 3px;
+        position: relative;
+      }
+    }
+    .info {
+      padding: 0 1.25rem;
+      span {
+        height: 1.25rem;
+        display: block;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        &.title {
+          font-weight: 500;
+          margin-top: 1rem;
+        }
+        &.publisher {
+          color: $light-text-color-400;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      .spacer {
+        display: block;
+        height: 34px;
+        width: 34px;
+      }
+      .duration {
+        padding: 0 1rem;
+      }
+      .btn-more {
+        box-shadow: none;
+        &:after {
+          border: none;
+        }
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}

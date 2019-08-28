@@ -1,0 +1,43 @@
+.discover {
+  .upcoming-events-section {
+    .upcoming-events {
+      > .row {
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        [class*='col-'] {
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+        }
+      }
+      .event {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        border-radius: 3px;
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 0;
+          border-radius: inherit;
+          background-color: rgba(0,0,0,.30);
+        }
+        h5 {
+          position: relative;
+          color: $light-text-color;
+          font-weight: 700;
+          line-height: 1.44;
+        }
+        span {
+          position: relative;
+          color: $muted-text-color;
+          display: block;
+          padding-top: 0.5rem;
+        }
+      }
+    }
+  }
+}

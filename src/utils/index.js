@@ -1,5 +1,9 @@
 export const noop = () => {};
 
+export const fakeCall = (response, timeout) => new Promise((resolve) => {
+  setTimeout(() => resolve(response), timeout);
+});
+
 export const recursiveFindMenuItemIdByPath = (menuItems, currentPath) => {
   let returnValue = 0;
   menuItems.some((menuItem) => {

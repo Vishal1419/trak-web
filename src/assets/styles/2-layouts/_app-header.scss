@@ -1,5 +1,12 @@
 .app-header {
   background-color: $secondary-background-color;
+  .header {
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      color: $brand-color;
+    }
+  }
   .brand-container {
     padding: 0.75rem 1rem;
     display: flex;
@@ -17,5 +24,19 @@
         letter-spacing: -1px;
       }
     }
+  }
+  .search-input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  .options {
+    margin-left: auto;
+    flex-direction: row;
+  }
+  .svg {
+    width: 16px;
+    height: 16px;
   }
 }

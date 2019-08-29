@@ -7,9 +7,9 @@ import Sidebar from '../../components/sidebar/SidebarContainer';
 import { noop } from '../../../utils';
 
 const MainTemplate = ({
-  children, isSidebarFolded, isSidebarVisible, setSidebarVisibility,
+  children, isSidebarFolded, isSidebarVisible, isSearchbarVisible, setSidebarVisibility,
 }) => (
-  <div className={`main-template ${isSidebarFolded ? 'sidebar-folded' : ''}`}>
+  <div className={`main-template ${isSidebarFolded ? 'sidebar-folded' : ''} ${isSearchbarVisible ? 'searchbar-visible' : ''}`}>
     <Sidebar />
     <div className="template-body">
       <AppHeader />
@@ -35,6 +35,7 @@ MainTemplate.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
   isSidebarFolded: PropTypes.bool,
   isSidebarVisible: PropTypes.bool,
+  isSearchbarVisible: PropTypes.bool,
   setSidebarVisibility: PropTypes.func,
 };
 
@@ -42,6 +43,7 @@ MainTemplate.defaultProps = {
   children: <div />,
   isSidebarFolded: false,
   isSidebarVisible: false,
+  isSearchbarVisible: false,
   setSidebarVisibility: noop,
 };
 

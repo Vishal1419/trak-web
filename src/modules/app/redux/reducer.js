@@ -4,6 +4,8 @@ const INITIAL_STATE = {
   selectedMenuItemId: 1,
   isSidebarFolded: false,
   isSidebarVisible: false,
+  isSearchbarVisible: false,
+  isFullScreen: false,
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -22,6 +24,16 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isSidebarVisible: action.payload,
+      };
+    case actionTypes.TOGGLE_SEARCHBAR_VISIBILITY:
+      return {
+        ...state,
+        isSearchbarVisible: !state.isSearchbarVisible,
+      };
+    case actionTypes.TOGGLE_FULL_SCREEN:
+      return {
+        ...state,
+        isFullScreen: action.payload,
       };
     default:
       return state;

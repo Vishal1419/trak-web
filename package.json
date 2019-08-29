@@ -15,6 +15,7 @@
     "react-content-loader": "^4.2.2",
     "react-dom": "^16.8.6",
     "react-feather": "^2.0.3",
+    "react-full-screen": "^0.2.4",
     "react-redux": "^7.1.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",

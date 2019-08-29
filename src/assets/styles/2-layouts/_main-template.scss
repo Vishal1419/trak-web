@@ -1,38 +1,47 @@
-:root {
-  --sidebar-width: 13.5rem; 
-}
-
 .main-template {
+  @media screen and (min-width: 992px) {
+    &.sidebar-folded {
+      .template-body {
+        left: 4.5rem;
+        .app-header, .app-footer {
+          left: 4.5rem;
+        }
+      }
+    }  
+  }
   display: flex;
   height: 100%;
   .sidebar {
-    width: var(--sidebar-width);
-    height: 100%;
-    @media screen and (max-width: 992px) {
-      --sidebar-width: 17.5rem;
-    }
     @media screen and (min-width: 992px) {
       &.folded {
-        --sidebar-width: 4.5rem;
+        width: 4.5rem;
       }
     }
+    @media screen and (max-width: 992px) {
+      width: 17.5rem;
+    }
+    width: 13.5rem;
+    height: 100%;
   }
   .template-body {
-    width: calc(100% - var(--sidebar-width));
-    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 13.5rem;
+    right: 0;
     @media screen and (max-width: 992px) {
-      width: 100%;
+      left: 0;
     }
     .app-header {
       position: fixed;
       z-index: 1000;
-      height: $brand-height;
       top: 0;
-      left: var(--sidebar-width);
+      left: 13.5rem;
       right: 0;
+      height: $brand-height;
       @media screen and (max-width: 992px) {
         left: 0;
-      }
+      }  
     }
     main {
       margin-top: $brand-height;
@@ -41,7 +50,6 @@
       @media (max-width: 768px) {
         padding: 1rem;
       }
-
       @media (max-width: 992px) {
           padding: 1.5rem;
       }
@@ -50,11 +58,11 @@
       position: fixed;
       z-index: 1000;
       bottom: 0;
-      left: var(--sidebar-width);
+      left: 13.5rem;
       right: 0;
       height: $footer-height;
       @media screen and (max-width: 992px) {
-        left: 0;
+        left: 0
       }
     }
   }

@@ -6,8 +6,10 @@ import AppFooter from '../../components/appFooter/AppFooterContainer';
 import Sidebar from '../../components/sidebar/SidebarContainer';
 import { noop } from '../../../utils';
 
-const MainTemplate = ({ children, isSidebarVisible, setSidebarVisibility }) => (
-  <div className="main-template">
+const MainTemplate = ({
+  children, isSidebarFolded, isSidebarVisible, setSidebarVisibility,
+}) => (
+  <div className={`main-template ${isSidebarFolded ? 'sidebar-folded' : ''}`}>
     <Sidebar />
     <div className="template-body">
       <AppHeader />
@@ -31,12 +33,14 @@ const MainTemplate = ({ children, isSidebarVisible, setSidebarVisibility }) => (
 
 MainTemplate.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
+  isSidebarFolded: PropTypes.bool,
   isSidebarVisible: PropTypes.bool,
   setSidebarVisibility: PropTypes.func,
 };
 
 MainTemplate.defaultProps = {
   children: <div />,
+  isSidebarFolded: false,
   isSidebarVisible: false,
   setSidebarVisibility: noop,
 };

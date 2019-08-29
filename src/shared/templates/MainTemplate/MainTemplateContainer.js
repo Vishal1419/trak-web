@@ -6,13 +6,19 @@ import MainTemplate from './MainTemplate';
 import { actions } from '../../../modules/app';
 import { noop } from '../../../utils';
 
-const MainTemplateContainer = ({ children, isSidebarVisible, setSidebarVisibility }) => {
+const MainTemplateContainer = ({
+  children, isSidebarFolded, isSidebarVisible, setSidebarVisibility,
+}) => {
   const _setSidebarVisibility = () => {
     setSidebarVisibility(false);
   };
 
   return (
-    <MainTemplate isSidebarVisible={isSidebarVisible} setSidebarVisibility={_setSidebarVisibility}>
+    <MainTemplate
+      isSidebarFolded={isSidebarFolded}
+      isSidebarVisible={isSidebarVisible}
+      setSidebarVisibility={_setSidebarVisibility}
+    >
       {children}
     </MainTemplate>
   );
@@ -20,17 +26,20 @@ const MainTemplateContainer = ({ children, isSidebarVisible, setSidebarVisibilit
 
 MainTemplateContainer.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
+  isSidebarFolded: PropTypes.bool,
   isSidebarVisible: PropTypes.bool,
   setSidebarVisibility: PropTypes.func,
 };
 
 MainTemplateContainer.defaultProps = {
   children: <div />,
+  isSidebarFolded: false,
   isSidebarVisible: false,
   setSidebarVisibility: noop,
 };
 
 const mapStateToProps = state => ({
+  isSidebarFolded: state.app.isSidebarFolded,
   isSidebarVisible: state.app.isSidebarVisible,
 });
 
